@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/m16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/m32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Linux    命令知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 命令知识">
+<meta property="og:url" content="https://mcallyly.github.io/2021/11/09/Linux%20Command%20Knowledge/index.html">
+<meta property="og:site_name" content="Mcally博客">
+<meta property="og:description" content="Linux    命令知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-09T14:18:25.000Z">
+<meta property="article:modified_time" content="2021-11-09T15:05:32.165Z">
+<meta property="article:author" content="Mcally">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary"><title>Linux 命令知识 | Mcally博客</title><link ref="canonical" href="https://mcallyly.github.io/2021/11/09/Linux%20Command%20Knowledge/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"ocean","wordWrap":false},
+  reward: true,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/aboutme/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于我</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Mcally博客</div><div class="header-banner-info__subtitle">日常编程笔记</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Linux 命令知识</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-09</span></span></div></header><div class="post-body">
+        <h1 id="Linux-命令知识"   >
+          <a href="#Linux-命令知识" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux-命令知识" class="headerlink" title="Linux    命令知识"></a>Linux    命令知识</h1>
+      <span id="more"></span>
+
+
+        <h4 id="Linux防火墙操作（经测试部分命令无效）"   >
+          <a href="#Linux防火墙操作（经测试部分命令无效）" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux防火墙操作（经测试部分命令无效）" class="headerlink" title="Linux防火墙操作（经测试部分命令无效）"></a>Linux防火墙操作（经测试部分命令无效）</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#关闭防火墙:</span></span><br><span class="line">service iptables stop</span><br><span class="line"><span class="comment">#开启防火墙:service iptables start</span></span><br><span class="line"><span class="comment">#防火墙状态:</span></span><br><span class="line">service iptables status</span><br><span class="line"><span class="comment">#永久关闭:</span></span><br><span class="line">chkconfig iptables off</span><br><span class="line"><span class="comment">#永久开启:</span></span><br><span class="line">chkconfig iptables on</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="方法一-命令"   >
+          <a href="#方法一-命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#方法一-命令" class="headerlink" title="方法一(命令):"></a>方法一(命令):</h5>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 开放端口命令：</span></span><br><span class="line"> /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line"><span class="comment">#2.保存：</span></span><br><span class="line">/etc/rc.d/init.d/iptables save</span><br><span class="line"><span class="comment">#3.重启服务：</span></span><br><span class="line">/etc/init.d/iptables restart</span><br><span class="line"><span class="comment">#4.查看端口是否开放：</span></span><br><span class="line">/sbin/iptables -L -n</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="方法二-修改文本"   >
+          <a href="#方法二-修改文本" class="heading-link"><i class="fas fa-link"></i></a><a href="#方法二-修改文本" class="headerlink" title="方法二(修改文本):"></a>方法二(修改文本):</h5>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.修改文件: </span></span><br><span class="line">vi /etc/sysconfig/iptables</span><br><span class="line"><span class="comment">#2.在文本中加入一行:</span></span><br><span class="line">-A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT</span><br><span class="line"><span class="comment">#3.重启服务:</span></span><br><span class="line">service iptables restart</span><br><span class="line"><span class="comment">#4.查看端口命令:</span></span><br><span class="line">service iptables status</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="关闭端口-命令"   >
+          <a href="#关闭端口-命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#关闭端口-命令" class="headerlink" title="关闭端口(命令):"></a>关闭端口(命令):</h5>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.</span></span><br><span class="line"> /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT </span><br><span class="line"><span class="comment">#2.  </span></span><br><span class="line">sudo iptables -A OUTPUT -p tcp --dport <span class="variable">$PORT</span> -j DROP<span class="string">&quot;   </span></span><br></pre></td></tr></table></div></figure>
+<p>   其他命令同方法一(命令)</p>
+
+        <h5 id="关闭端口-删除文本"   >
+          <a href="#关闭端口-删除文本" class="heading-link"><i class="fas fa-link"></i></a><a href="#关闭端口-删除文本" class="headerlink" title="关闭端口(删除文本):"></a>关闭端口(删除文本):</h5>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></div></figure>
+<p>   其他命令同方法二(修改文件)</p>
+
+        <h4 id="CentOS7-防火墙操作（测试命令全部有效）"   >
+          <a href="#CentOS7-防火墙操作（测试命令全部有效）" class="heading-link"><i class="fas fa-link"></i></a><a href="#CentOS7-防火墙操作（测试命令全部有效）" class="headerlink" title="CentOS7 防火墙操作（测试命令全部有效）"></a>CentOS7 防火墙操作（测试命令全部有效）</h4>
+       <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1， 查看防火墙状态：</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">systemctl status firewalld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#2， 开启防火墙：</span></span><br><span class="line">systemctl start firewalld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，设置开机自启：</span></span><br><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#4， 重启防火墙：</span></span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#5， 查看防火墙设置开机自启是否成功：</span></span><br><span class="line">systemctl is-enabled firewalld.service;<span class="built_in">echo</span> $?</span><br><span class="line"></span><br><span class="line"><span class="comment">#6，关闭防火墙：</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#7，开端口命令：</span></span><br><span class="line"><span class="comment">#打开单个端口：</span></span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line"><span class="comment">#打开多个端口：</span></span><br><span class="line">firewall-cmd --zone=public --add-port=20000-29999/tcp --permanent</span><br><span class="line"><span class="comment">#--permanent  为永久生效，不加为单次有效（重启失效）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#8，查看开启端口：</span></span><br><span class="line">netstat -ntlp</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">firewall-cmd --list-ports</span><br><span class="line"></span><br><span class="line"><span class="comment">#9，关闭端口命令：</span></span><br><span class="line">firewall-cmd --zone=public --remove-port=80/tcp --permanent</span><br><span class="line"></span><br><span class="line"><span class="comment">#10、查看端口是否打开</span></span><br><span class="line">firewall-cmd --zone=public --query-port=80/tcp</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h1 id="Linux-scp命令"   >
+          <a href="#Linux-scp命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux-scp命令" class="headerlink" title="Linux  scp命令"></a>Linux  scp命令</h1>
+      
+        <h4 id="语法"   >
+          <a href="#语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#语法" class="headerlink" title="语法"></a>语法</h4>
+      <blockquote>
+<p>scp [可选参数] file_source file_target</p>
+</blockquote>
+
+        <h4 id="参数说明："   >
+          <a href="#参数说明：" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h4>
+      <blockquote>
+<p>-1： 强制scp命令使用协议ssh1<br>-2： 强制scp命令使用协议ssh2<br>-4： 强制scp命令只使用IPv4寻址<br>-6： 强制scp命令只使用IPv6寻址<br>-B： 使用批处理模式（传输过程中不询问传输口令或短语）<br>-C： 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）<br>-p：保留原文件的修改时间，访问时间和访问权限。<br>-q： 不显示传输进度条。<br>-r： 递归复制整个目录。<br>-v：详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。<br>-c cipher： 以cipher将数据传输进行加密，这个选项将直接传递给ssh。<br>-F ssh_config： 指定一个替代的ssh配置文件，此参数直接传递给ssh。<br>-i identity_file： 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。<br>-l limit： 限定用户所能使用的带宽，以Kbit/s为单位。<br>-o ssh_option： 如果习惯于使用ssh_config(5)中的参数传递方式，<br>-P port：注意是大写的P, port是指定数据传输用到的端口号<br>-S program： 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</p>
+</blockquote>
+
+        <h4 id="1-从本地复制到远程"   >
+          <a href="#1-从本地复制到远程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-从本地复制到远程" class="headerlink" title="1.从本地复制到远程"></a>1.从本地复制到远程</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scp local_file remote_username@remote_ip:remote_folder </span><br><span class="line"><span class="comment">#或者 </span></span><br><span class="line">scp local_file remote_username@remote_ip:remote_file </span><br><span class="line"><span class="comment">#或者 </span></span><br><span class="line">scp local_file remote_ip:remote_folder </span><br><span class="line"><span class="comment">#或者 </span></span><br><span class="line">scp local_file remote_ip:remote_file </span><br><span class="line"><span class="comment">#第1,2个指定了用户名，命令执行后需要再输入密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名； </span></span><br><span class="line"><span class="comment">#第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名；</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="应用实例："   >
+          <a href="#应用实例：" class="heading-link"><i class="fas fa-link"></i></a><a href="#应用实例：" class="headerlink" title="应用实例："></a>应用实例：</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scp /home/space/music/1.mp3 root@www.runoob.com:/home/root/others/music </span><br><span class="line">scp /home/space/music/1.mp3 root@www.runoob.com:/home/root/others/music/001.mp3 </span><br><span class="line">scp /home/space/music/1.mp3 www.runoob.com:/home/root/others/music </span><br><span class="line">scp /home/space/music/1.mp3 www.runoob.com:/home/root/others/music/001.mp3 </span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h4 id="复制目录命令格式："   >
+          <a href="#复制目录命令格式：" class="heading-link"><i class="fas fa-link"></i></a><a href="#复制目录命令格式：" class="headerlink" title="复制目录命令格式："></a>复制目录命令格式：</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scp -r local_folder remote_username@remote_ip:remote_folder </span><br><span class="line">或者 </span><br><span class="line">scp -r local_folder remote_ip:remote_folder</span><br><span class="line"><span class="comment">#第1个指定了用户名，命令执行后需要再输入密码；</span></span><br><span class="line"><span class="comment">#第2个没有指定用户名，命令执行后需要输入用户名和密码；</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h4 id="应用实例：-1"   >
+          <a href="#应用实例：-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#应用实例：-1" class="headerlink" title="应用实例："></a>应用实例：</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r /home/space/music/ root@www.runoob.com:/home/root/others/ </span><br><span class="line">scp -r /home/space/music/ www.runoob.com:/home/root/others/ </span><br><span class="line"><span class="comment">#上面命令将本地 music 目录复制到远程 others 目录下。</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h4 id="2-从远程复制到本地"   >
+          <a href="#2-从远程复制到本地" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-从远程复制到本地" class="headerlink" title="2.从远程复制到本地"></a>2.从远程复制到本地</h4>
+      <blockquote>
+<p>从远程复制到本地，只要将从本地复制到远程的命令的后2个参数调换顺序即可，如下实例 </p>
+</blockquote>
+
+        <h4 id="应用实例"   >
+          <a href="#应用实例" class="heading-link"><i class="fas fa-link"></i></a><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3 </span><br><span class="line">scp -r www.runoob.com:/home/root/others/ /home/space/music/</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>如果远程服务器防火墙有为scp命令设置了指定的端口，我们需要使用 -P 参数来设置命令的端口号，命令格式如下：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scp 命令使用端口号 4588 远程复制到本地</span></span><br><span class="line">scp -P 4588 remote@www.runoob.com:/usr/<span class="built_in">local</span>/sin.sh /home/administrator</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scp 命令使用端口号 4588 远程复制到本地（这里容易有个误区，端口号依旧跟在scp后边，而不是跟在远程user@Ip 前边）</span></span><br><span class="line">scp -P 4588 /home/administrator remote@www.runoob.com:/usr/<span class="built_in">local</span>/sin.sh </span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>使用scp命令要确保使用的用户具有可读取远程服务器相应文件的权限，否则scp命令是无法起作用的</p>
+</blockquote>
+
+        <h1 id="Linux-nohup-命令"   >
+          <a href="#Linux-nohup-命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux-nohup-命令" class="headerlink" title="Linux nohup 命令"></a>Linux nohup 命令</h1>
+      <blockquote>
+<p>nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。<br>nohup 命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下，如果当前目录的 nohup.out 文件不可写，输出重定向到 $HOME/nohup.out 文件中。</p>
+</blockquote>
+
+        <h4 id="语法格式"   >
+          <a href="#语法格式" class="heading-link"><i class="fas fa-link"></i></a><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup Command [ Arg … ] [　&amp; ]</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="参数说明：-1"   >
+          <a href="#参数说明：-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数说明：-1" class="headerlink" title="参数说明："></a>参数说明：</h4>
+      <ul>
+<li>Command：要执行的命令。</li>
+<li>Arg：一些参数，可以指定输出文件。</li>
+<li>&amp;：让命令在后台执行，终端退出后命令仍旧执行。</li>
+</ul>
+
+        <h4 id="实例"   >
+          <a href="#实例" class="heading-link"><i class="fas fa-link"></i></a><a href="#实例" class="headerlink" title="实例"></a>实例</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下命令在后台执行 root 目录下的 runoob.sh 脚本：</span></span><br><span class="line">nohup /root/run.sh &amp;</span><br><span class="line"><span class="comment"># 在终端如果看到以下输出说明运行成功：</span></span><br><span class="line">appending output to nohup.out</span><br><span class="line"><span class="comment">#这时我们打开 root 目录 可以看到生成了 nohup.out 文件。</span></span><br><span class="line"><span class="comment">#如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：</span></span><br><span class="line">ps -aux | grep <span class="string">&quot;run.sh&quot;</span> </span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="参数说明：-2"   >
+          <a href="#参数说明：-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数说明：-2" class="headerlink" title="参数说明："></a>参数说明：</h4>
+      <ul>
+<li>a : 显示所有程序</li>
+<li>u : 以用户为主的格式来显示</li>
+<li>x : 显示所有程序，不区分终端机</li>
+</ul>
+<blockquote>
+<p>另外也可以使用 ps -def | grep “run.sh” 命令来查找。<br>找到 PID 后，就可以使用 kill PID 来删除。</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9  进程号PID</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>以下命令在后台执行 root 目录下的 run.sh 脚本，并重定向输入到 run.log 文件：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup /root/runoob.sh &gt; runoob.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>2&gt;&amp;1 解释：<br>将标准错误 2 重定向到标准输出 &amp;1 ，标准输出 &amp;1 再被重定向输入到 runoob.log 文件中。</p>
+</blockquote>
+<ul>
+<li>0 – stdin (standard input，标准输入)</li>
+<li>1 – stdout (standard output，标准输出)</li>
+<li>2 – stderr (standard error，标准错误输出)</li>
+</ul>
+
+        <h1 id="Linux-tail-命令"   >
+          <a href="#Linux-tail-命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux-tail-命令" class="headerlink" title="Linux tail 命令"></a>Linux tail 命令</h1>
+      <blockquote>
+<p>tail 命令可用于查看文件的内容，有一个常用的参数 -f 常用于查阅正在改变的日志文件。<br>tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内容。</p>
+</blockquote>
+
+        <h4 id="命令格式："   >
+          <a href="#命令格式：" class="heading-link"><i class="fas fa-link"></i></a><a href="#命令格式：" class="headerlink" title="命令格式："></a>命令格式：</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail [参数] [文件]  </span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="参数："   >
+          <a href="#参数：" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4>
+      <ul>
+<li>-f 循环读取</li>
+<li>-q 不显示处理信息</li>
+<li>-v 显示详细的处理信息</li>
+<li>-c&lt;数目&gt; 显示的字节数</li>
+<li>-n&lt;行数&gt; 显示文件的尾部 n 行内容</li>
+<li>–pid=PID 与-f合用,表示在进程ID,PID死掉之后结束-</li>
+<li>-q, –quiet, –silent 从不输出给出文件名的首部</li>
+<li>-s, –sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒</li>
+</ul>
+<blockquote>
+<p>要显示 notes.log 文件的最后 10 行，请输入以下命令：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail notes.log         <span class="comment"># 默认显示最后 10 行</span></span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>要跟踪名为 notes.log 的文件的增长情况，请输入以下命令：</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f notes.log</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>此命令显示 notes.log 文件的最后 10 行。当将某些行添加至 notes.log 文件时，tail 命令会继续显示这些行。 显示一直继续，直到您按下（Ctrl-C）组合键停止显示。<br>显示文件 notes.log 的内容，从第 20 行至文件末尾:</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n +20 notes.log</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>显示文件 notes.log 的最后 10 个字符:</p>
+</blockquote>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -c 10 notes.log</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+
+
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://mcallyly.github.io">Mcally</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://mcallyly.github.io/2021/11/09/Linux%20Command%20Knowledge/">https://mcallyly.github.io/2021/11/09/Linux%20Command%20Knowledge/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://mcallyly.github.io/tags/linux/">linux</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img" src="/images/zfbpay.jpg"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img" src="/images/weixinpay.png"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/11/04/Linux%20%20install%20Docker/"><span class="paginator-prev__text">Linux  安装Docker</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%91%BD%E4%BB%A4%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">
+          Linux    命令知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C%EF%BC%88%E7%BB%8F%E6%B5%8B%E8%AF%95%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4%E6%97%A0%E6%95%88%EF%BC%89"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">
+          Linux防火墙操作（经测试部分命令无效）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">
+          方法一(命令):</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C-%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">
+          方法二(修改文本):</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">
+          关闭端口(命令):</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3-%E5%88%A0%E9%99%A4%E6%96%87%E6%9C%AC"><span class="toc-number">1.0.0.1.4.</span> <span class="toc-text">
+          关闭端口(删除文本):</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CentOS7-%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C%EF%BC%88%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E5%85%A8%E9%83%A8%E6%9C%89%E6%95%88%EF%BC%89"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">
+          CentOS7 防火墙操作（测试命令全部有效）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-scp%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">
+          Linux  scp命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">
+          语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">
+          参数说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%8E%E6%9C%AC%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">
+          1.从本地复制到远程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">
+          应用实例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E7%9B%AE%E5%BD%95%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">
+          复制目录命令格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A-1"><span class="toc-number">2.0.0.6.</span> <span class="toc-text">
+          应用实例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%8E%E8%BF%9C%E7%A8%8B%E5%A4%8D%E5%88%B6%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">2.0.0.7.</span> <span class="toc-text">
+          2.从远程复制到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.0.0.8.</span> <span class="toc-text">
+          应用实例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-nohup-%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">
+          Linux nohup 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">
+          语法格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A-1"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">
+          参数说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.0.0.3.</span> <span class="toc-text">
+          实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A-2"><span class="toc-number">3.0.0.4.</span> <span class="toc-text">
+          参数说明：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-tail-%E5%91%BD%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">
+          Linux tail 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">
+          命令格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">
+          参数：</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avter.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">I am Mcally</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Mcally</span><span class="footer__devider">|</span><span>备案 蜀ICP备2021027611号</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
